@@ -196,16 +196,17 @@ class NetworkGateway(private val httpClient: HttpClient) {
   });
 }
 
-// 6. Interactive Contact Form with Validation & Sound
+// 6. Interactive Contact Form with Direct Gmail Delivery (FormSubmit)
 function initContactForm() {
   const form = document.getElementById("contact-form");
   if (!form) return;
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const name = form.querySelector("#contact-name").value.trim();
     const email = form.querySelector("#contact-email").value.trim();
+    const subject = form.querySelector("#contact-subject")?.value.trim() || "Portfolio Opportunity / Inquiry";
     const message = form.querySelector("#contact-message").value.trim();
 
     if (!name || !email || !message) {
@@ -214,21 +215,57 @@ function initContactForm() {
     }
 
     const submitBtn = form.querySelector("button[type='submit']");
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = `<span>Sending...</span>`;
+    const originalContent = submitBtn.innerHTML;
+    submitBtn.innerHTML = `
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite;">
+        <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+        <path d="M12 2a10 10 0 0 1 10 10"></path>
+      </svg>
+      <span>Sending to Arvind...</span>
+    `;
     submitBtn.disabled = true;
 
-    setTimeout(() => {
-      submitBtn.innerHTML = `<span>Sent Successfully! ✓</span>`;
-      form.reset();
-      showToast("🚀 Message sent! Arvind will get back to you shortly.");
-      if (window.soundFX) window.soundFX.playSuccess();
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/arvindpoonia01@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          _subject: `[Portfolio Inquiry] ${subject} - ${name}`,
+          message: message,
+          _captcha: "false",
+          _template: "table"
+        })
+      });
 
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok) {
+        submitBtn.innerHTML = `<span>Delivered to Arvind's Inbox! ✓</span>`;
+        form.reset();
+        showToast("🚀 Message sent directly to arvindpoonia01@gmail.com!");
+        if (window.soundFX) window.soundFX.playSuccess();
+      } else {
+        throw new Error(data.message || "Submission failed");
+      }
+    } catch (err) {
+      console.warn("Direct form submission error, opening mailto fallback:", err);
+      // Fallback to mailto so user's message is never lost
+      const mailtoUrl = `mailto:arvindpoonia01@gmail.com?subject=${encodeURIComponent("[Portfolio Inquiry] " + subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+      window.location.href = mailtoUrl;
+
+      submitBtn.innerHTML = `<span>Opened in Mail Client ✓</span>`;
+      showToast("✉️ Opening your email app to send directly to Arvind.");
+    } finally {
       setTimeout(() => {
-        submitBtn.innerHTML = originalText;
+        submitBtn.innerHTML = originalContent;
         submitBtn.disabled = false;
-      }, 3000);
-    }, 900);
+      }, 4500);
+    }
   });
 }
 

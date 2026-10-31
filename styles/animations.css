@@ -126,3 +126,8 @@
   background: rgba(0, 242, 254, 0.12);
   border-color: rgba(0, 242, 254, 0.8);
 }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
