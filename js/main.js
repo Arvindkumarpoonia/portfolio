@@ -238,7 +238,7 @@ function initEmailCopy() {
 
   copyPills.forEach(pill => {
     pill.addEventListener("click", () => {
-      const email = pill.getAttribute("data-email") || "kumararvind@seasiainfotech.com";
+      const email = pill.getAttribute("data-email") || "arvindpoonia01@gmail.com";
       navigator.clipboard.writeText(email).then(() => {
         showToast("📋 Email copied to clipboard: " + email);
         if (window.soundFX) window.soundFX.playPop();
