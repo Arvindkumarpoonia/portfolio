@@ -1,7 +1,7 @@
-# Arvind Kumar Poonia - Portfolio Website
+# Arvind Poonia - Portfolio Website
 
-> **Senior Android Developer & Team Lead**  
-> 7+ years of experience specializing in Java, Kotlin, MVVM, ExoPlayer, Room DB, and Material Design.
+> **Lead Android Engineer & Principal Consultant**  
+> 10+ years of experience specializing in Kotlin, KMP, Jetpack Compose, MVVM, Clean Architecture, High-Frequency Telemetry, BLE/IoT, and Real-Time Systems.
 
 ---
 
@@ -9,34 +9,16 @@
 
 This portfolio is built with pure, modern **HTML5, Vanilla CSS, and ES6 JavaScript**. It requires **zero build step**, meaning it works natively and instantly on **GitHub Pages**.
 
-### Step 1: Initialize Git & Push to GitHub
+### Remote GitHub Repository
 
-Open your terminal in this repository folder (`/Users/arvindkumar/Documents/Protfolio`) and run:
-
-```bash
-# 1. Initialize git (if not already done)
-git init
-
-# 2. Stage and commit all files
-git add .
-git commit -m "feat: Initial commit for Arvind Kumar Poonia portfolio"
-
-# 3. Rename branch to main
-git branch -M main
-
-# 4. Link your remote GitHub repository
-# (Replace with your actual GitHub repository URL, e.g. https://github.com/<your-username>/portfolio.git)
-git remote add origin https://github.com/<your-username>/portfolio.git
-
-# 5. Push to GitHub
-git push -u origin main
-```
+- **Repository**: [https://github.com/Arvindkumarpoonia/portfolio.git](https://github.com/Arvindkumarpoonia/portfolio.git)
+- **Live URL**: [https://arvindkumarpoonia.github.io/portfolio/](https://arvindkumarpoonia.github.io/portfolio/)
 
 ---
 
-### Step 2: Enable GitHub Pages (Takes 30 Seconds!)
+### Step 1: Enable GitHub Pages
 
-1. Go to your repository on [GitHub](https://github.com).
+1. Go to your repository on [GitHub](https://github.com/Arvindkumarpoonia/portfolio).
 2. Click on **Settings** (gear icon) at the top right of your repo.
 3. In the left sidebar, click on **Pages** (under the "Code and automation" section).
 4. Under **Build and deployment**:
@@ -45,9 +27,7 @@ git push -u origin main
 5. Click **Save**!
 
 Within 60 seconds, your portfolio will be live at:
-👉 `https://<your-username>.github.io/<repository-name>/`
-
-*(Or if you named the repo `<your-username>.github.io`, it will be live directly at `https://<your-username>.github.io/`!)*
+👉 **`https://arvindkumarpoonia.github.io/portfolio/`**
 
 ---
 
