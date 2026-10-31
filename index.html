@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arvind Kumar Poonia | Senior Android Developer & Team Lead</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Portfolio of Arvind Kumar Poonia - 7+ years of experience as an Android Developer & Team Lead specializing in Java, Kotlin, MVVM, ExoPlayer, Room DB, and Material Design." />
+  <meta name="keywords" content="Arvind Kumar Poonia, Android Developer, Kotlin, Java, MVVM, ExoPlayer, FlowPlayer, Meet and Greet, Pixafame, Room DB, Material Design, Portfolio" />
+  <meta name="author" content="Arvind Kumar Poonia" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Arvind Kumar Poonia | Senior Android Developer & Team Lead" />
+  <meta property="og:description" content="Explore FlowPlayer, Meet & Greet, Pixafame, and high-performance Android & Cross-Platform engineering." />
+  <meta property="og:image" content="assets/images/avatar.jpg" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+</head>
+<body>
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Ambient Glowing Mesh Spheres -->
+  <div class="ambient-glow-sphere glow-cyan"></div>
+  <div class="ambient-glow-sphere glow-purple"></div>
+  <div class="ambient-glow-sphere glow-magenta"></div>
+
+  <!-- Interactive Canvas Particles Net -->
+  <canvas id="canvas-particles"></canvas>
+
+  <!-- Custom Magnetic Cursor Follower -->
+  <div id="custom-cursor" class="custom-cursor-follower"></div>
+
+  <!-- ========================================================================
+       NAVIGATION BAR
+       ======================================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" id="brand-logo">
+        <div class="logo-badge">AK</div>
+        <span>Arvind.dev</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link active">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Sound FX Switch -->
+        <button class="icon-btn" id="sound-toggle" title="Toggle UI Sound Effects" aria-label="Toggle Sound Effects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+
+        <!-- Light / Dark Theme Switch -->
+        <button class="icon-btn" id="theme-toggle" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Open Terminal Console -->
+        <button class="btn btn-sm btn-terminal-trigger open-terminal-btn" title="Launch Interactive Terminal">
+          <span>CLI ⚡</span>
+        </button>
+
+        <!-- Hire Me CTA -->
+        <a href="#contact" class="btn btn-primary btn-sm">Get In Touch</a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-menu-overlay" id="mobile-menu">
+    <ul class="mobile-menu-links">
+      <li><a href="#about" class="mobile-menu-link">About <span>01</span></a></li>
+      <li><a href="#projects" class="mobile-menu-link">Projects <span>02</span></a></li>
+      <li><a href="#skills" class="mobile-menu-link">Skills <span>03</span></a></li>
+      <li><a href="#experience" class="mobile-menu-link">Experience <span>04</span></a></li>
+      <li><a href="#architecture" class="mobile-menu-link">Architecture <span>05</span></a></li>
+      <li><a href="#contact" class="mobile-menu-link">Contact <span>06</span></a></li>
+    </ul>
+    <div>
+      <button class="btn btn-primary" style="width:100%;margin-bottom:1rem;" onclick="document.getElementById('mobile-toggle').click();window.location='#contact';">
+        Hire Arvind
+      </button>
+      <button class="btn btn-secondary open-terminal-btn" style="width:100%;">
+        Open Terminal Console ⚡
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- ======================================================================
+         HERO SECTION
+         ====================================================================== -->
+    <section class="section hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-content-col">
+            <div class="hero-status">
+              <span class="status-dot"></span>
+              <span>Available for Senior Android & Lead Opportunities</span>
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <span class="text-gradient">Arvind Kumar Poonia</span>
+            </h1>
+
+            <div class="hero-typed-wrapper">
+              <span id="hero-typed-text"></span>
+              <span class="typed-cursor">|</span>
+            </div>
+
+            <p class="hero-bio">
+              7+ years of experience delivering high-scale Android mobile applications with clean MVVM architecture, ExoPlayer media streaming, Room DB offline sync, and Material Design excellence.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore Featured Apps</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <a href="#contact" class="btn btn-secondary">
+                <span>Contact Me</span>
+              </a>
+
+              <button class="btn btn-terminal-trigger open-terminal-btn">
+                <span>Interactive CLI ⚡</span>
+              </button>
+            </div>
+
+            <div class="hero-metrics">
+              <div class="metric-item">
+                <span class="metric-number text-gradient">7+</span>
+                <span class="metric-label">Years of Experience</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number text-gradient-purple">100%</span>
+                <span class="metric-label">Kotlin & Java Proficiency</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number text-gradient-emerald">99.9%</span>
+                <span class="metric-label">Crash-Free Sessions</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">MCA</span>
+                <span class="metric-label">Kurukshetra University</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Avatar & Interactive Card -->
+          <div class="hero-visual-wrapper">
+            <div class="hero-avatar-card">
+              <div class="avatar-image-container">
+                <img src="assets/images/avatar.jpg" alt="Arvind Kumar Poonia" class="avatar-image" />
+              </div>
+
+              <!-- Floating Tech Badges -->
+              <div class="floating-chip chip-kmp">
+                <svg class="chip-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span>Kotlin & Android</span>
+              </div>
+
+              <div class="floating-chip chip-react">
+                <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>ExoPlayer & Media</span>
+              </div>
+
+              <div class="floating-chip chip-ios">
+                <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Room DB & MVVM</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ABOUT & SUMMARY SECTION
+         ====================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 3rem;">
+          <span class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            Summary & Vision
+          </span>
+          <h2 class="section-title">Architecting Resilient <span class="text-gradient">Mobile Experiences</span></h2>
+          <p class="section-description">
+            With 7+ years in Android software development, I bridge the gap between complex backend architectures and intuitive, responsive user interfaces.
+          </p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:2rem;">
+          <div class="glass-panel" style="padding:2.25rem;">
+            <div style="color:var(--accent-cyan);margin-bottom:1rem;">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                <rect x="9" y="9" width="6" height="6"></rect>
+                <line x1="9" y1="1" x2="9" y2="4"></line>
+                <line x1="15" y1="1" x2="15" y2="4"></line>
+              </svg>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:1.35rem;margin-bottom:0.75rem;">Robust Architecture</h3>
+            <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;">
+              Specializing in Clean MVVM & MVI patterns, unidirectional data flow, Kotlin Coroutines, StateFlow, and offline-first Room DB synchronization to eliminate edge-case crashes.
+            </p>
+          </div>
+
+          <div class="glass-panel" style="padding:2.25rem;">
+            <div style="color:var(--accent-purple);margin-bottom:1rem;">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:1.35rem;margin-bottom:0.75rem;">Media & Realtime Streaming</h3>
+            <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;">
+              Deep expertise with Google ExoPlayer audio/video pipeline, real-time live streaming with interactive chats, CameraX hardware integration, and low-latency Firebase sync.
+            </p>
+          </div>
+
+          <div class="glass-panel" style="padding:2.25rem;">
+            <div style="color:var(--accent-emerald);margin-bottom:1rem;">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:1.35rem;margin-bottom:0.75rem;">Engineering Leadership</h3>
+            <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;">
+              Proven track record as Team Lead delivering commercial mobile applications, guiding agile sprints via Jira, establishing CI/CD deployment pipelines, and mentoring engineers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FEATURED PROJECTS SECTION
+         ====================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Portfolio Showcase
+          </span>
+          <h2 class="section-title">Flagship Mobile <span class="text-gradient">Projects</span></h2>
+          <p class="section-description">
+            Handcrafted applications engineered with performance, scalability, and seamless user experiences at their core.
+          </p>
+        </div>
+
+        <!-- Filter Buttons Bar -->
+        <div class="project-filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects (6)</button>
+          <button class="filter-btn" data-filter="android">Android & Media (3)</button>
+          <button class="filter-btn" data-filter="crossplatform">Fintech & Cross-Platform (1)</button>
+          <button class="filter-btn" data-filter="kmp">Kotlin Multiplatform (1)</button>
+          <button class="filter-btn" data-filter="ai">Mobile AI & Vision (1)</button>
+        </div>
+
+        <!-- Dynamic Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+          <!-- Rendered dynamically by js/projects.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TECHNICAL SKILLS MATRIX SECTION
+         ====================================================================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 3.5rem;">
+          <span class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            Technical Stack
+          </span>
+          <h2 class="section-title">Skills & <span class="text-gradient">Core Competencies</span></h2>
+          <p class="section-description">
+            Comprehensive proficiency across Android SDK, modern languages, persistence engines, and agile development toolchains.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          
+          <!-- Category 1: Languages -->
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon-bubble">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="skill-title">Languages</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">Kotlin</span>
+                  <span class="skill-level">96%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 96%;"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">Java</span>
+                  <span class="skill-level">94%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 94%;"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">TypeScript / JS</span>
+                  <span class="skill-level">82%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 82%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Frameworks & SDK -->
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon-bubble" style="background:rgba(139,92,246,0.1);color:var(--accent-purple);border-color:rgba(139,92,246,0.25);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </div>
+              <h3 class="skill-title">Frameworks & SDK</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">Android SDK & Jetpack</span>
+                  <span class="skill-level">98%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 98%;"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">MVVM & Clean Arch</span>
+                  <span class="skill-level">95%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">ExoPlayer & Media</span>
+                  <span class="skill-level">92%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 92%;"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">Material Design 3</span>
+                  <span class="skill-level">94%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 94%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Database & Cloud -->
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon-bubble" style="background:rgba(16,185,129,0.1);color:var(--accent-emerald);border-color:rgba(16,185,129,0.25);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <h3 class="skill-title">Database & Persistence</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">Room Database</span>
+                  <span class="skill-level">95%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">SQLite & Migrations</span>
+                  <span class="skill-level">92%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 92%;"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">Firebase (Auth, RTDB, FCM)</span>
+                  <span class="skill-level">90%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Tools & Leadership -->
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon-bubble" style="background:rgba(245,158,11,0.1);color:var(--accent-amber);border-color:rgba(245,158,11,0.25);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+              <h3 class="skill-title">Tools & Delivery</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">Android Studio</span>
+                  <span class="skill-level">98%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 98%;"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">Git & Version Control</span>
+                  <span class="skill-level">94%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 94%;"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-meta">
+                  <span class="skill-name">Jira & Agile Sprint Leadership</span>
+                  <span class="skill-level">92%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 92%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         EXPERIENCE & LEADERSHIP TIMELINE
+         ====================================================================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 3.5rem;">
+          <span class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            Career History
+          </span>
+          <h2 class="section-title">Professional <span class="text-gradient">Experience</span></h2>
+          <p class="section-description">
+            7+ years of engineering leadership, scalable product delivery, and technical stewardship.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Team Lead & Android Developer</h3>
+                <span class="timeline-badge">7+ Years Total Exp</span>
+              </div>
+              <div class="timeline-company">Mobile Engineering Division</div>
+              <ul class="timeline-bullets">
+                <li class="timeline-bullet">Delivered scalable mobile applications in fast-paced production environments with strict SLA and crash tolerances.</li>
+                <li class="timeline-bullet">Architected core multimedia streaming features using Google ExoPlayer, background audio services, and Firebase cloud integrations.</li>
+                <li class="timeline-bullet">Spearheaded camera and QR barcode scanning modules using CameraX and ML Kit for high-speed contact synchronization.</li>
+                <li class="timeline-bullet">Led agile sprint cycles via Jira, managed code review standards, and mentored junior engineers in MVVM and Kotlin Coroutines.</li>
+                <li class="timeline-bullet">Authored offline-first data caching architectures using Room DB and SQLite for zero data loss.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: Education -->
+          <div class="timeline-item">
+            <div class="timeline-node" style="border-color:var(--accent-purple);box-shadow:0 0 10px var(--accent-purple);"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Master of Computer Applications (MCA)</h3>
+                <span class="timeline-badge" style="color:var(--accent-purple);border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.1);">Graduated</span>
+              </div>
+              <div class="timeline-company">Kurukshetra University</div>
+              <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.6;margin-top:0.5rem;">
+                Advanced computer science curriculum focused on Object-Oriented Software Engineering, Mobile Architecture, Database Management Systems, Algorithm Design, and Distributed Networks.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ARCHITECTURE PHILOSOPHY (INTERACTIVE TABS)
+         ====================================================================== -->
+    <section class="section" id="architecture">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"></path>
+              <line x1="2" y1="20" x2="2.01" y2="20"></line>
+            </svg>
+            Code Philosophy
+          </span>
+          <h2 class="section-title">Architectural <span class="text-gradient">Blueprints</span></h2>
+          <p class="section-description">
+            Clean code, unidirectional data flow, and battle-tested mobile design patterns.
+          </p>
+        </div>
+
+        <div class="arch-tabs-container">
+          <div class="arch-tab-header">
+            <button class="arch-tab-btn active" data-tab="mvvm">Kotlin MVVM + Coroutines</button>
+            <button class="arch-tab-btn" data-tab="room">Offline-First Room DB</button>
+            <button class="arch-tab-btn" data-tab="kmp">Kotlin Multiplatform Network</button>
+          </div>
+          <div class="arch-tab-body">
+            <pre class="arch-code-snippet"><code id="arch-code-block">// Android MVVM with StateFlow & Clean Coroutines
+@HiltViewModel
+class MediaCatalogViewModel @Inject constructor(
+    private val getTracksUseCase: GetTracksUseCase,
+    private val mediaRepository: MediaRepository
+) : ViewModel() {
+
+    private val _uiState = MutableStateFlow<MediaUiState>(MediaUiState.Loading)
+    val uiState: StateFlow<MediaUiState> = _uiState.asStateFlow()
+
+    fun loadMedia(category: String) {
+        viewModelScope.launch {
+            getTracksUseCase(category)
+                .catch { error -> _uiState.value = MediaUiState.Error(error.localizedMessage) }
+                .collect { tracks -> _uiState.value = MediaUiState.Success(tracks) }
+        }
+    }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CONTACT & CONNECT SECTION
+         ====================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <div class="contact-info-card">
+            <div>
+              <span class="section-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Get In Touch
+              </span>
+              <h2 class="section-title" style="margin-bottom:1rem;">Let's Build Something <span class="text-gradient">Extraordinary</span></h2>
+              <p class="section-description" style="margin-bottom:1.5rem;">
+                Looking for an experienced Senior Android Developer or Mobile Team Lead? Whether you need to build from scratch or optimize existing apps, let's talk.
+              </p>
+
+              <!-- One-click Copy Email Pill -->
+              <div class="email-copy-pill" data-email="kumararvind@seasiainfotech.com" title="Click to copy email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>kumararvind@seasiainfotech.com</span>
+                <span style="font-size:0.75rem;opacity:0.7;">(click to copy)</span>
+              </div>
+            </div>
+
+            <!-- Current Time & Availability Widget -->
+            <div class="glass-panel" style="padding:1.4rem;display:flex;align-items:center;gap:1.25rem;">
+              <div style="width:42px;height:42px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;color:var(--accent-emerald);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div style="font-size:0.8rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;">Current Local Time</div>
+                <div id="timezone-clock" style="font-family:var(--font-mono);font-size:1.05rem;font-weight:700;color:var(--text-primary);">--:--:-- IST</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form">
+            <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.5rem;">Send a Direct Message</h3>
+            
+            <form id="contact-form">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Your Full Name *</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="e.g. Sarah Connor" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email Address *</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="name@company.com" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Project / Role In Mind</label>
+                <input type="text" id="contact-subject" class="form-control" placeholder="Senior Android Role / App Development" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Your Message *</label>
+                <textarea id="contact-message" class="form-control" placeholder="Tell me about your mobile vision, app challenges, or team timeline..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;">
+                <span>Send Message</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-copyright">
+        © 2026 Arvind Kumar Poonia. Built with Vanilla HTML5, CSS3 & ES6 JavaScript. Ready for GitHub Pages.
+      </div>
+      <div class="footer-gh-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        <span>GitHub Pages Ready</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       FLOATING TERMINAL DRAWER & TRIGGER BUTTON
+       ======================================================================== -->
+  <button class="terminal-trigger-floating open-terminal-btn" title="Open Interactive Developer Terminal">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="4 17 10 11 4 5"></polyline>
+      <line x1="12" y1="19" x2="20" y2="19"></line>
+    </svg>
+    <span>Terminal</span>
+  </button>
+
+  <div class="terminal-drawer" id="terminal-drawer">
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <div class="control-dot dot-red" id="term-close-dot" title="Close"></div>
+        <div class="control-dot dot-yellow"></div>
+        <div class="control-dot dot-green"></div>
+      </div>
+      <div class="terminal-title">arvind@macbook-pro: ~/portfolio (zsh)</div>
+      <div style="font-size:0.75rem;color:var(--text-muted);">ESC to close</div>
+    </div>
+    <div class="terminal-body" id="terminal-body">
+      <div>Welcome to Arvind Kumar Poonia's interactive shell.</div>
+      <div>Type <span style="color:#00f2fe;font-weight:bold;">help</span> to inspect available developer commands.</div>
+    </div>
+    <div class="terminal-prompt-line" style="padding: 0.5rem 1.25rem 0.75rem;">
+      <span class="terminal-ps1">visitor@arvind:~$</span>
+      <input type="text" id="terminal-input" class="terminal-input" placeholder="type 'help', 'projects', 'skills'..." autocomplete="off" spellcheck="false" />
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       CASE STUDY DETAIL MODAL
+       ======================================================================== -->
+  <div class="modal-backdrop" id="case-study-modal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modal-close-btn" title="Close Modal">✕</button>
+      <div class="modal-body" id="modal-dynamic-content">
+        <!-- Rendered dynamically by js/projects.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Scripts -->
+  <script src="js/effects.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

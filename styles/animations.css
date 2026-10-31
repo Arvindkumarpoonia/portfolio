@@ -1,0 +1,128 @@
+/* ==========================================================================
+   PORTFOLIO ANIMATIONS - ARVIND KUMAR
+   Subtle micro-interactions, glowing aura, keyframes and 3D tilts
+   ========================================================================== */
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes floatChip {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes ambientShift {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.ambient-glow-sphere {
+  animation: ambientShift 18s ease-in-out infinite alternate;
+}
+
+.glow-purple {
+  animation-duration: 22s;
+  animation-delay: -5s;
+}
+
+.glow-magenta {
+  animation-duration: 25s;
+  animation-delay: -10s;
+}
+
+/* Shimmer effect on cards */
+.shimmer-line {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: all 0.75s;
+  pointer-events: none;
+}
+
+.project-card:hover .shimmer-line {
+  left: 200%;
+}
+
+/* Fade in scroll observer helper */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay classes */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+
+/* Custom cursor tracker */
+.custom-cursor-follower {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 242, 254, 0.45);
+  background: rgba(0, 242, 254, 0.04);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  display: none;
+}
+
+@media (pointer: fine) {
+  .custom-cursor-follower {
+    display: block;
+  }
+}
+
+.custom-cursor-follower.hovering {
+  width: 54px;
+  height: 54px;
+  background: rgba(0, 242, 254, 0.12);
+  border-color: rgba(0, 242, 254, 0.8);
+}
