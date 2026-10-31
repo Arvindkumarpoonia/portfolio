@@ -238,19 +238,6 @@
   font-size: 0.85rem;
 }
 
-.btn-terminal-trigger {
-  background: rgba(139, 92, 246, 0.15);
-  color: #c084fc;
-  border: 1px solid rgba(139, 92, 246, 0.4);
-}
-
-.btn-terminal-trigger:hover {
-  background: rgba(139, 92, 246, 0.3);
-  color: #fff;
-  border-color: #c084fc;
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
-  transform: translateY(-2px);
-}
 
 /* --------------------------------------------------------------------------
    3. HERO SECTION
@@ -912,123 +899,6 @@
   color: var(--accent-cyan);
 }
 
-/* --------------------------------------------------------------------------
-   8. INTERACTIVE DEVELOPER TERMINAL CONSOLE
-   -------------------------------------------------------------------------- */
-.terminal-drawer {
-  position: fixed;
-  bottom: -500px;
-  right: 2rem;
-  width: 540px;
-  max-width: calc(100vw - 4rem);
-  height: 400px;
-  background: rgba(8, 11, 18, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 242, 254, 0.35);
-  border-radius: 16px 16px 0 0;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 242, 254, 0.2);
-  z-index: 1000;
-  transition: bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-mono);
-}
-
-.terminal-drawer.open {
-  bottom: 0;
-}
-
-.terminal-header {
-  padding: 0.75rem 1.25rem;
-  background: rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid var(--border-subtle);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.terminal-controls {
-  display: flex;
-  gap: 6px;
-}
-
-.control-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.dot-red { background: #ff5f56; }
-.dot-yellow { background: #ffbd2e; }
-.dot-green { background: #27c93f; }
-
-.terminal-title {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  font-weight: 600;
-}
-
-.terminal-body {
-  padding: 1.25rem;
-  flex-grow: 1;
-  overflow-y: auto;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: #38bdf8;
-}
-
-.terminal-prompt-line {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.terminal-ps1 {
-  color: var(--accent-magenta);
-  font-weight: 700;
-}
-
-.terminal-input {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #fff;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  flex-grow: 1;
-}
-
-.terminal-trigger-floating {
-  position: fixed;
-  bottom: 1.75rem;
-  right: 1.75rem;
-  z-index: 900;
-  padding: 0.75rem 1.25rem;
-  border-radius: var(--border-radius-pill);
-  background: var(--bg-glass-heavy);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 242, 254, 0.4);
-  color: var(--text-primary);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 242, 254, 0.25);
-  transition: all var(--transition-fast);
-}
-
-.terminal-trigger-floating:hover {
-  transform: translateY(-3px) scale(1.02);
-  border-color: var(--accent-cyan);
-  box-shadow: 0 8px 30px rgba(0, 242, 254, 0.45);
-}
 
 /* --------------------------------------------------------------------------
    9. CASE STUDY MODAL & DIALOG
@@ -1280,12 +1150,6 @@ textarea.form-control {
     grid-template-columns: 1fr;
   }
 
-  .terminal-drawer {
-    right: 1rem;
-    left: 1rem;
-    width: auto;
-    max-width: none;
-  }
 }
 
 @media (max-width: 768px) {
