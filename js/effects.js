@@ -178,7 +178,7 @@ function initTypingEffect() {
 
   const phrases = [
     "Android Team Lead & Architect",
-    "Kotlin & Java Specialist",
+    "Kotlin, React Native & Java",
     "ExoPlayer, Room DB & MVVM",
     "Material Design & Clean Code",
     "Cross-Platform & KMP Explorer"

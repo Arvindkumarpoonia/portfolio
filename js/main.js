@@ -134,6 +134,8 @@ function initMobileMenu() {
 // 5. Architecture Philosophy Tabs
 function initArchitectureTabs() {
   const tabBtns = document.querySelectorAll(".arch-tab-btn");
+  if (!tabBtns || tabBtns.length === 0) return;
+  const codeDisplay = document.getElementById("arch-code-block");
   const tabContents = {
     mvvm: `// Android MVVM with StateFlow & Clean Coroutines
 @HiltViewModel
